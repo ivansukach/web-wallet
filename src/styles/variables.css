@@ -1,0 +1,17 @@
+:root{
+    --sidebar-width: 20vw;
+    --z-appHeader: 100;
+    --z-appMenu: 99;
+    --app-nav: white;
+    --menu-dark: lightblue;
+    --menu-text: black;
+    --menu-background: #eee;
+    --x: 16px;
+
+    --xxl: calc(var(--x) * 1.75);
+    --xl: calc(var(--x) * 1.5);
+    --lg: calc(var(--x) * 1.25);
+    --m: var(--x);
+    --sm: calc(var(--x) * 0.75);
+    --xs: calc(var(--x) * 0.7);
+}

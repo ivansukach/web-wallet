@@ -1,0 +1,21 @@
+html, body{
+    min-height: 100vh;
+    overflow: hidden;
+}
+body{
+    margin: 0;
+    background: linear-gradient(-45deg, dodgerblue, white, #19c19a );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
