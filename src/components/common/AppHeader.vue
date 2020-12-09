@@ -41,12 +41,12 @@ export default {
     desktop: false,
   }),
   computed: {
-  //   ...mapState([`session`, `connection`]),
+  //   ...mapState([`auth`, `connection`]),
   //   networkSlug() {
   //     return this.connection.networkSlug
   //   },
   //   isMobileApp() {
-  //     return this.session.mobile
+  //     return this.auth.mobile
   //   },
     hideSidebarMenu() {
       return !this.$route.meta.networkSpecificRoute && this.desktop;
@@ -84,6 +84,7 @@ export default {
   width: var(--sidebar-width);
   background-color: var(--menu-background);
   box-shadow:0 0 10px lightblue;
+  display: inline-block;
   /*display: flex;*/
   /*flex-direction: row;*/
 }
@@ -129,9 +130,9 @@ export default {
 }
 
 .header-item-logo {
-  width: 10vw;
+  width: 12vw;
   min-width: 100px;
-  margin: 2vh 0 2vh 1vw;
+  margin: 2vh 0 2vh 2.5vw;
 }
 
 /*.header-menu-section {*/
@@ -164,6 +165,7 @@ export default {
     width: 100%;
     height: auto;
     vertical-align: center;
+    /*display: inline-block;*/
     /*min-height: 0;*/
   }
     .app-header.open {

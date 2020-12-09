@@ -1,6 +1,6 @@
 import Vue from "vue"
 import { ApolloClient } from "apollo-boost"
-import { ApolloLink, concat, split } from "apollo-link"
+import { ApolloLink, concat, split} from "apollo-link"
 import { createPersistedQueryLink } from "apollo-link-persisted-queries"
 import { WebSocketLink } from "apollo-link-ws"
 import { InMemoryCache } from "apollo-cache-inmemory"
@@ -12,8 +12,8 @@ import { createHttpLink } from "apollo-link-http"
 
 Vue.use(VueApollo)
 
-// to avoid circular dependencies we use this error handler, for errors happening in the router
-// those errors should trigger things in the store (that needs the router)
+// // to avoid circular dependencies we use this error handler, for errors happening in the router
+// // those errors should trigger things in the store (that needs the router)
 // class DeferredErrorHandler {
 //   constructor() {
 //     this.errors = []
@@ -47,6 +47,12 @@ const makeWebSocketLink = () => {
   const uri = `${config.graphqlHost.replace("http", "ws")}/graphql`
   return new WebSocketLink({ uri })
 }
+
+// const errorLink = onError(({ graphQLErrors, networkError }) => {
+//   console.log("error")
+//     alert(graphQLErrors);
+//     alert(networkError);
+//   })
 
 const createApolloClient = async () => {
   const fingerprint = await getFingerprint()
@@ -88,6 +94,9 @@ export const createApolloProvider = async () => {
       $query: {
         fetchPolicy: "cache-and-network",
       },
+    },
+    errorHandler(error){
+      alert(error)
     },
   })
 }

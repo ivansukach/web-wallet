@@ -1,9 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Portfolio from "../components/common/PagePortfolio.vue";
-import Validators from "../components/common/PageValidators.vue";
-import Proposals from "../components/common/PageProposals.vue";
-import Transactions from "../components/common/PageTransactions.vue";
+import Portfolio from "../views/PagePortfolio.vue";
+import Validators from "../views/PageValidators.vue";
+import Proposals from "../views/PageProposals.vue";
+import Transactions from "../views/PageTransactions.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +21,7 @@ const routes = [
     component: Portfolio,
     meta: {
       networkSpecificRoute: true,
+      requiresAuth: true
     },
   },
   {
@@ -55,7 +56,37 @@ const routes = [
     meta: {
       networkSpecificRoute: true,
     },
-  }
+  },
+  {
+    path: `/create`,
+    name: `create`,
+    components: {
+      auth: () => import(`@/views/modal/ModalSignUpLogin`),
+    },
+    meta: {
+      // feature: "session",
+    },
+  },
+  {
+    path: `/create/password`,
+    name: `create/password`,
+    components: {
+      auth: () => import(`@/views/modal/ModalSignUpPassword`),
+    },
+    meta: {
+      // feature: "session",
+    },
+  },
+  {
+    path: `/create/confirm`,
+    name: `create/confirm`,
+    components: {
+      auth: () => import(`@/views/modal/ModalSignUpMnemonic`),
+    },
+    meta: {
+      // feature: "session",
+    },
+  },
 ];
 
 const router = new VueRouter({

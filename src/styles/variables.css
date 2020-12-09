@@ -2,10 +2,27 @@
     --sidebar-width: 20vw;
     --z-appHeader: 100;
     --z-appMenu: 99;
+    --z-modal: 1000;
+    --warning: #ef752e;
+    --danger: #ff1a1a;
+    --bg-session: #f2f3f4;
     --app-nav: white;
     --menu-dark: lightblue;
     --menu-text: black;
     --menu-background: #eee;
+    --octa-color: rgb(0,138,255);
+    --form-text-color: #374B7C;
+    --font: -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
     --x: 16px;
 
     --xxl: calc(var(--x) * 1.75);

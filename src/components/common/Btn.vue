@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 button {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   outline: none;
   background: #fff;
   cursor: pointer;

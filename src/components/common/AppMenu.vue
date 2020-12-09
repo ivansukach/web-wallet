@@ -41,7 +41,6 @@
       >
         <h2 class="app-menu-title">Transactions</h2>
       </router-link>
-      <div class="hello glow-effect">HELLO</div>
 
 <!--      <router-link-->
 <!--        class="app-menu-item hide-m"-->
@@ -143,13 +142,13 @@ export default {
   color: var(--menu-text);
   text-decoration: none;
 }
-/*.app-menu-item.router-link-active {*/
-/*  background: purple;*/
-/*}*/
-
-.app-menu-item:hover {
-  background: var(--menu-dark);
+.app-menu-item.glow-effect {
+  background: #fff;
 }
+
+/*.app-menu-item:hover {*/
+/*  background: var(--menu-dark);*/
+/*}*/
 .app-menu-title{
   font-weight: normal;
   margin-left: 1.5vw;
@@ -164,6 +163,9 @@ export default {
   margin-right: 1vw;
   font-size: large;
 }
+.app-menu-item.router-link-exact-active h2:after {
+  color: aqua;
+}
 #helpBtn {
   margin: 6vh 2vw;
 }
@@ -171,16 +173,6 @@ export default {
 .flexible-column {
   display: flex;
   flex-flow: column nowrap;
-}
-
-.hello {
-  /*border: 1px solid blue;*/
-  /*outline: none;*/
-  /*background: #fff;*/
-  /*cursor: pointer;*/
-  /*border-radius: 10px;*/
-  /*padding: 15px;*/
-  position: relative;
 }
 
 /*.app-menu .app-menu-item {*/
@@ -196,7 +188,7 @@ export default {
 /*  transition: all 0.5s ease;*/
 /*}*/
 
-/*.session-link {*/
+/*.auth-link {*/
 /*  margin: 2.5rem 1rem 1rem;*/
 /*}*/
 

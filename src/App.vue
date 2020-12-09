@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <!--    <NetworkSelector />-->
     <AppHeader />
-<!--    <div id="app-content">-->
+    <div id="app-content">
 <!--      <div id="bar-container">-->
 <!--        <CookieBar v-if="!isMobileApp" />-->
 <!--        &lt;!&ndash;        <MaintenanceBar />&ndash;&gt;-->
 <!--        &lt;!&ndash;        <DisconnectedBar />&ndash;&gt;-->
 <!--      </div>-->
 <!--      <UserMenu v-if="!isMobileApp" />-->
-<!--      <router-view name="session" />-->
+      <router-view name="auth" />
       <router-view />
-<!--    </div>-->
+    </div>
     <!--    <MobileMenu />-->
   </div>
 </template>
@@ -28,7 +27,6 @@ export default {
     // UserMenu,
     // MaintenanceBar,
     // MobileMenu,
-    // NetworkSelector,
   },
 }
 </script>

@@ -1,5 +1,15 @@
 @import "variables.css";
 
+a {
+    text-decoration: none;
+}
+#app{
+    font-family: var(--font);
+}
+#app-content{
+    display: inline-block;
+}
+
 .boot-error {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -25,24 +35,37 @@
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
+    /*transition: opacity .3s ease-in-out;*/
     /*border-radius: 10px;*/
+    /*opacity: 0;*/
 }
 .glow-effect{
     position: relative;
+    border: none;
+    outline: none;
 }
 
 .glow-effect:active {
     color: #000;
 }
-.glow-effect:hover {
-    border: none;
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+    fill: #4691f6;
 }
 
-.glow-effect:hover:before {
-    opacity: 1;
+.svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
 }
+/*.glow-effect:hover {*/
+/*    border: none;*/
+/*}*/
+
+/*.glow-effect:hover:before {*/
+/*    opacity: 1;*/
+/*}*/
 
 @keyframes glowing {
     0% { background-position: 0 0; }

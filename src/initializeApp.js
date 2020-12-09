@@ -1,4 +1,7 @@
-import { createApolloProvider} from "./gql/apollo.js";
+import {createApolloProvider} from "./gql/apollo.js";
+import Store from "./store";
+// import config from "../config";
+// import axios from "axios";
 
 export const bootError = (error) => {
     document.querySelector("#app").innerHTML = `
@@ -11,20 +14,19 @@ export const bootError = (error) => {
 }
 export default async function init() {
     // let initialized = false
-    const apolloProvider = await createApolloProvider()
-    // apolloErrorHandler.onError((error) => {
-    //     console.error(error)
-    //     alert("initialized: "+initialized)
-    //     if (!initialized) {
-    //         alert("not initialized")
-    //         bootError(new Error("Failed to connect to API: " + error.message))
-    //     }
-    // })
+    const apolloProvider = await createApolloProvider().catch(error => {
+        bootError(error);
+    });
+    const store = Store({apollo: apolloProvider.defaultClient})
+    await store.dispatch(`loadUserData`)
+      // const url = `${config.API}/auth/accounts/cosmos1xr6snj7cfst8eyja5fwsed6n5gvxyvc0f46c68`;
+      // const acc = (await axios.get(url)).data;
+      // console.log(acc);
     // await apolloProvider.defaultClient.query({
     //     query: Validators,
     //     fetchPolicy: "network-only",
     // })
     // initialized = true
-    return {apolloProvider}
+    return {apolloProvider, store}
 
 }
